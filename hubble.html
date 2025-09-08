@@ -1,0 +1,63 @@
+<html>
+  <head>
+    <script src="https://aframe.io/releases/1.7.0/aframe.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/gh/donmccurdy/aframe-extras@v7.2.0/dist/aframe-extras.min.js"></script>
+  </head>
+  <body>
+    <a-scene>
+    
+      <a-assets>
+        <!-- Define your GLB model as an asset -->
+        <a-asset-item id="alien boy" src="assets/turbo boy alien.glb"></a-asset-item>
+        <a-asset-item id="space walker" src="assets/space walker.glb"></a-asset-item>
+        <a-asset-item id="ufo" src="assets/ufo.glb"></a-asset-item>
+        <a-asset-item id="alien2" src="assets/alien 2.glb"></a-asset-item>
+      </a-assets>
+
+      <a-entity
+        gltf-model="#alien boy"
+        position="0 0 -4"
+        scale="2 2 2"
+        rotation="0 45 0"
+        animation-mixer="clip:Take 001"
+      ></a-entity>
+
+      <a-entity
+        gltf-model="#alien2"
+        position="5 0 -4"
+        scale="0.5 0.5 0.5"
+        rotation="0 -45 0"
+        animation-mixer="clip:wave"
+      ></a-entity>
+
+      <a-entity
+        gltf-model="#ufo"
+        position="-25 20 0"
+        scale="2 2 2"
+        rotation="0 45 0"
+        animation-mixer="clip:Sphere|grp_transform|Take 001|BaseLayer"
+      ></a-entity>
+
+       <a-entity
+        gltf-model="#space walker"
+        position="4 0 4"
+        scale="2 2 2"
+        rotation="0 -90 0"
+        animation-mixer="clip:FBXExportClip_0"
+      ></a-entity>
+
+      <a-text
+        font="kelsonsans"
+        value="Hubble"
+        width="6"
+        position="0 0 -3"
+        rotation="0 0 0"
+      ></a-text>
+
+      <a-sky src="assets/hubble lawn.jpg" rotation="0 -130 0"></a-sky>
+      
+      <a-sound src="src: url(assets/upes audio.mp3)" autoplay="true" position="0 2 5"></a-sound>
+
+    </a-scene>
+  </body>
+</html>

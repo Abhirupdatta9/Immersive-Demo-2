@@ -1,0 +1,27 @@
+<html>
+  <head>
+    <script src="https://aframe.io/releases/1.7.0/aframe.min.js"></script>
+  </head>
+  <body>
+    <a-scene>
+    
+    <a-text
+        font="kelsonsans"
+        value="Quadrangle"
+        width="6"
+        position="0 0 -3"
+        rotation="0 0 0"
+      ></a-text>
+
+
+    <a-assets>
+        <video id="quadrangle" autoplay loop="true" src="assets/quadrangle.mp4"> </video>
+    </a-assets>
+    
+    <a-videosphere src="#quadrangle"></a-videosphere>
+
+      <!-- <a-sky src="assets/quadrangle.mp4" rotation="0 -130 0"></a-sky> -->
+    
+    </a-scene>
+  </body>
+</html>

@@ -1,0 +1,79 @@
+<html>
+  <head>
+    <script src="https://aframe.io/releases/1.7.0/aframe.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/gh/donmccurdy/aframe-extras@v7.2.0/dist/aframe-extras.min.js"></script>
+  </head>
+  <body>
+    <a-scene>
+    
+    <a-text
+        font="kelsonsans"
+        value="Fresco"
+        width="6"
+        position="-0.3 1 -1.5"
+        rotation="0 -10 0"
+      ></a-text>
+
+    <a-assets>
+        <!-- Define your GLB model as an asset -->
+        <a-asset-item id="alvin" src="assets/alvin.glb"></a-asset-item>
+        <a-asset-item id="burger" src="assets/burger.glb"></a-asset-item>
+        <a-asset-item id="pizza" src="assets/pizza.glb"></a-asset-item>
+        <a-asset-item id="coffee" src="assets/coffee mugs.glb"></a-asset-item>
+        <a-asset-item id="breakfast" src="assets/breakfast.glb"></a-asset-item>
+        <a-asset-item id="boy" src="assets/boy.glb"></a-asset-item>
+    </a-assets>
+
+      <!-- Create an entity and attach the gltf-model component -->
+      <a-entity
+        gltf-model="#alvin"
+        position="-1 -1 -2"
+        scale="0.2 0.2 0.2"
+        rotation="0 45 0"
+      ></a-entity>
+
+      <a-entity
+        gltf-model="#boy"
+        position="1 -1 -2"
+        scale="0.02 0.02 0.02"
+        rotation="0 -30 0"
+        animation-mixer="clip:Take 001"
+      ></a-entity>
+
+      <a-entity
+        gltf-model="#burger"
+        position="0 -5 50"
+        scale="0.05 0.05 0.05"
+        rotation="0 0 0"
+      ></a-entity>
+
+      <a-entity
+        gltf-model="#breakfast"
+        position="0 -1 0"
+        scale="2 2 2"
+        rotation="0 -15 0"
+      ></a-entity>
+
+      <a-plane id="myPlane" position="0 1 -3" rotation="-90 0 0" width="4" height="2" color="#ADD8E6">
+            <!-- <a-text value="Welcome to A-Frame!" color="black" width="3" align="center" position="0 0.01 0" rotation="90 0 0"></a-text> -->
+      </a-plane>
+
+      <!-- Camera + cursor. -->
+      <a-entity camera look-controls>
+        <a-cursor
+          id="cursor"
+          geometry="primitive: ring; radiusInner: 0.02; radiusOuter: 0.04"
+          material="color: white; shader: flat"
+          blink="true"
+          animation__click="property: scale; start  Events: click; from: 0.1 0.1 0.1; to: 1 1 1; dur: 150"
+          animation__fusing="property: fusing; startEvents: fusing; from: 1 1 1; to: 0.1 0.1 0.1; dur: 1500"
+          event-set__mouseenter="_event: mouseenter; color: springgreen"
+          event-set__mouseleave="_event: mouseleave; color: white"
+          raycaster="objects: .link"></a-cursor>
+      </a-entity>
+
+      <a-sky src="assets/frisco benches.jpg" rotation="0 -130 0"></a-sky>
+    
+    </a-scene>
+  </body>
+</html>
